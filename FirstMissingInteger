@@ -1,1 +1,61 @@
+#Problem : Given an unsorted array, find the first missing positive integer
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+#
+# Complete the 'first_missing_positive_integer' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER_ARRAY integers as parameter.
+#
+# It will check the integer array and return the first 
+# missing positive integer. 
+#
+'''
+U - return the first missing positive integer
+    first missing positive integer
+    input - unsorted array
+    data type - array / numbers
+    output - integers
+M - last factorial digit
+  - repeating process - count primes
+  - for loop or while loop
+  - find first pos integer
+  -if statements
+
+P - n = [3,4,-1,1]
+    for i in n 
+    ignore negative numbers
+I
+R
+E
+'''
+def first_missing_positive_integer(integers):
+    # Write your code here
+    num_array = []
+    for number in integers:
+        if (number <= 0):
+            continue
+        if (number + 1 > len(num_array)):
+            extend = number - len(num_array) + 1
+            num_array.extend([False] * extend)
+        num_array[number] =True
+
+    missing_num = 0
+    for place in range(1,len(num_array)):
+        if num_array[place] == False:
+            missing_num = place
+    if (missing_num == 0 and len(num_array) ==0):
+        return 1
+    elif missing_num == 0 and len(num_array) >0:
+        return len(num_array)
+    else:
+        return missing_num
 
