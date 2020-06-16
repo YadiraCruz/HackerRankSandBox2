@@ -1,1 +1,25 @@
+#Problem : given a non-empty array of integers every element appears twice except for one
+#!/bin/python3
 
+import math
+import os
+import random
+import re
+import sys
+
+
+#
+# Complete the 'singleNumber' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER_ARRAY nums as parameter.
+# Find the integer in the array that only occurs once 
+# and return that integer. 
+
+def singleNumber(nums):
+    # Write your code here
+    ''' If we add each number once and multiply the sum by 2, we will get twice sum of each             
+    element of the array. subtract the sum of the whole array from the twice_sum and get            
+    the required number'''
+    
+    return 2 * sum(set(nums)) - sum(nums)
